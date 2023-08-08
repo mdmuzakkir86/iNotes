@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}iNote - Edit Notes{% endblock %}
+
+{% block content %}
+<div class="card-header">
+    <h1> Edit Note </h1>
+    </div>
+        <form action="/update" method="post">
+            <div class="mb-3">
+                  <label for="noteId" class="form-label">Note Id</label>
+                  <input type="text" class="input_control" id="noteId" name="noteId" value="{{note._id}}" readonly>
+            </div>
+             <div class="mb-3">
+                  <label for="noteTitle" class="form-label">Note Name</label>
+                  <input type="text" class="input_control" id="noteTitle"  name="noteTitle" value="{{note.title}}">
+            </div>
+            <div class="mb-3">
+                <label for="noteDesc" class="form-label">Note Description</label>
+                <textarea class="textarea_control_edit" id="noteDesc" name="noteDesc">{{note.desc}}</textarea>
+            </div>
+
+            <input type="submit" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" class="btn btn-danger">
+        </form>
+    </div>
+{% endblock %}

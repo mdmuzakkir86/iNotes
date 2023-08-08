@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}iNote - Home{% endblock %}
+
+{% block content %}
+<div class="add-note">
+  <h3>Add your notes</h3>
+  <form action="/" method="post">
+      <div class="mb-3">
+        <label for="title" class="form-label">Note Title</label>
+        <input type="text" class="input_control" name="title">
+      </div>
+      <div class="mb-3">
+        <label for="desc" class="form-label">Note Description</label>
+        <textarea class="textarea_control" name="desc"></textarea>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" name="important" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}iNote - Get Notes{% endblock %}
+
+{% block content %}
+<div class="note-list">
+  <h3 class="note-list-heading">Your Notes</h3>
+  <div class="note-items">
+    {% if newDocs %}
+      {% for item in newDocs %}
+        <div class="note-item">
+          <h5 class="note-title">Title: {{ item.title }}</h5>
+          <a class="edit-button" href="edit/{{item._id}}">Edit</a>
+          <a class="delete-button" href="delete/{{item._id}}">Delete</a>
+          <p class="note-desc">{{ item.desc }}</p>
+        </div><br>
+      {% endfor %}
+    {% else %}
+      <p class="no-notes">No notes to display</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
